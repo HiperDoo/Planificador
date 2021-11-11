@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Planificador de Trabajos</title>
+	<link rel="stylesheet" href="style/styles.css">
+	<link href='https://css.gg/eye.css' rel='stylesheet'>
+	<link href='https://css.gg/profile.css' rel='stylesheet'>
+	<link href='https://css.gg/add-r.css' rel='stylesheet'>
+	<link href='https://css.gg/filters.css' rel='stylesheet'>
+	<script type="text/javascript" src="src/rolldate.js"></script>
+</head>
+<body>
+	<div class="cont-box">
+		<div class="info-box-user">
+			<div class="exit"></div>
+			<div class="name-user">Alexia</div>
+			<div class="info-user">Nombre: Alexia</br>Edad: 0</br>Correo: alexia_example@hotmail.com</br>Numero Telefonico: (686) 000-0000</br></br>Notas: Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el contenido del texto de un sitio mientras que mira su diseño. El punto de usar Lorem Ipsum es que tiene una distribución más o menos normal de las letras, al contrario de usar textos como por ejemplo "Contenido aquí, contenido aquí". Estos textos hacen parecerlo un español que se puede leer.</div>
+			<div class="works">
+				<ul class="list"></ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="cont-edit">
+		<div class="edit-box">
+			<div class="controlBtn">
+				<button onclick="add()" type="button" class="btns btn_add">Add</button>
+				<button onclick="edit()" type="button" class="btns btn_edit">Edit</button>
+				<button onclick="del()" type="button" class="btns btn_delete">Delete</button>
+			</div>
+
+			<div class="add_cont">
+				<div class="add-cont-1">
+					<div id="add-name">Usuario:</div>
+					<input id="add-name-inp" type="text">
+				</div>
+				<div class="add-cont-2">
+					<div id="add-Task">Agrega una Tarea:</div>
+					<input id="add-Task-inp" type="text">
+					<div id="add-List">Posicion de la Tarea:</div>
+					<div id="add-List-list">
+						<ul class="add-list-ul">
+							<!--<li class="elmL">1</li>
+							<li class="elmL">2</li>
+							<li class="elmL">3</li>
+							<li class="elmL">4</li>
+							<li class="elmL">5</li>
+							<li class="elmL">6</li>
+							<li class="elmL">7</li>
+							<li class="elmL">8</li>
+							<li class="elmL">9</li>
+							<li class="elmL">10</li>-->
+						</ul>
+					</div>
+				</div>
+				<div class="add-cont-3">
+					<div id="add-first-day">Dia Inicio: </div>
+					<div id="add-last-day">Dia Final: </div>
+					<input readonly type="text" id="add-first-day-inp" placeholder="">
+					<input readonly type="text" id="add-last-day-inp" placeholder="">
+					<button onclick="add_task()" class="btns add_task">Add Tsk</button>
+				</div>
+				<button onclick="add_save()" class="btns add_save">Save</button>
+			</div>
+
+			<div class="edit_cont"></div>
+			<div class="del_cont"></div>
+
+			<!--<div class="addUser">
+				<input id="name-user" type="text">
+				<input id="position" type="text">
+			</div>
+			<div class="addTasks">
+				<input id="user" type="text">
+				<input id="position2" type="text">
+				<input id="name-task" type="text">
+				<input id="start-date" type="text">
+				<input id="end-date" type="text">
+				<input id="important" type="text">
+			</div>
+			<div class="editUser">
+				<input id="user2" type="text">
+				<input id="new-user" type="text">
+				<input id="position3" type="text">
+				<input id="name-task2" type="text">
+				<input id="new-name-task" type="text">
+			</div>
+			<button onclick="save()" class="btns save">Save</button>-->
+		</div>
+	</div>
+
+	<div class="Col-12 container">
+		<div class="title-box">
+			<h1>Planificador de Trabajos</h1>
+			<div class="profile"><i class="gg-profile"></i></div>
+			<div class="settings"><i class="gg-add-r"></i></div>
+			<div class="logo"><i class="gg-filters"></i></div>
+		</div>
+	</div>
+
+	<div class="Col-11 content">
+		<div class="Col-4 cont-buttons" style="position: absolute;">
+			<button onclick="manage()" class="btns btn_manage">Manage</button>
+			<button onclick="left()" class="btns btn_izq">⮜</button>
+			<button onclick="right()" class="btns btn_der">⮞</button>
+		</div>
+
+		<div class="Col-8 calendar">
+			<div class="Col-12 dias-semana">
+				<div class="day Left"><p id="d0">Dom<br/>29 Ago</p></div>
+				<div class="day Left"><p id="d1">Lun<br/>30 Ago</p></div>
+				<div class="day Left"><p id="d2">Mar<br/>31 Ago</p></div>
+				<div class="day Left"><p id="d3">Mie<br/>1 Sep</p></div>
+				<div class="day Left"><p id="d4">Jue<br/>2 Sep</p></div>
+				<div class="day Left"><p id="d5">Vie<br/>3 Sep</p></div>
+				<div class="day Left"><p id="d6">Sab<br/>4 Sep</p></div>
+			</div>
+		</div>
+
+		<div class="Col-12 users">
+			<div class="user-data user-0" id="user-0">
+				<div class="Left cont-user-info">
+					<div class="photo">Photo</div>
+					<div class="name">Alexia</div>
+					<div class="cont-job-info">
+						<div class="status-job">
+							<div class="point"></div>
+							<p class="working-on">---</p>
+						</div>
+						<div class="more-jobs">
+							<pre class="date-job">-- --- - -- ---</pre>
+							<pre class="porcentage-job">--%</pre>
+						</div>
+						<i class="gg-eye ver-mas"></i>
+					</div>
+				</div>
+				<div class="Right cont-user-job-bar">
+					<div class="sub-cont-bar">
+						<div class="tasks">
+							<!--<div class="group-bars-0">
+								<div class="back-bar-task" style="background-color: rgba(60, 91, 168, 0.4);"></div>
+								<div class="bar-task" style="background-color: rgb(60, 91, 168);"></div>
+							</div>-->
+						</div>
+						<div class="boxes">
+							<div class="izq-middle box bx1"></div><div class="box bx1"></div><div class="box bx1"></div><div class="box bx1"></div>
+							<div class="box bx1"></div><div class="box bx1"></div><div class="der-middle box bx1"></div>
+
+							<div class="izq-middle box bx2"></div><div class="box bx2"></div><div class="box bx2"></div><div class="box bx2"></div>
+							<div class="box bx2"></div><div class="box bx2"></div><div class="der-middle box bx2"></div>
+
+							<div class="izq-middle box bx3"></div><div class="box bx3"></div><div class="box bx3"></div><div class="box bx3"></div>
+							<div class="box bx3"></div><div class="box bx3"></div><div class="der-middle box bx3"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="pop-up-box">
+			3168 LUM-33<br/>20 Aug - 25 Aug<br/>50%
+		</div>
+		<div class="base-group-bars">
+			<div class="back-bar-task" style="background-color: rgba(60, 91, 168, 0.4);"></div>
+			<div class="bar-task" style="background-color: rgb(60, 91, 168);"></div>
+		</div>
+	</div>
+</body>
+<script src="src/script.js"></script>
+<script>
+	new Rolldate({
+		el: '#add-first-day-inp',
+		format: 'YYYY-MM-DD hh:mm:ss',
+		beginYear: 2000,
+		endYear: 2100
+	});
+	new Rolldate({
+		el: '#add-last-day-inp',
+		format: 'YYYY-MM-DD hh:mm:ss',
+		beginYear: 2000,
+		endYear: 2100
+	})
+</script>
+</html>

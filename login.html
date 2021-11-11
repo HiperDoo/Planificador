@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Login</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="style/styles_login.css">
+</head>
+<body>
+	<div class="center">
+		<h1>Login</h1>
+		<form method="post">
+			<div class="txt_field">
+				<input type="text" class="user" required>
+				<span></span>
+				<label>Usuario</label>
+			</div>
+			<div class="txt_field">
+				<input type="password" class="password" required>
+				<span></span>
+				<label>Contraseña</label>
+			</div>
+			<div class="pass">Olvidé mi Contraseña</div>
+			<input type="button" value="Login" onclick="login()">
+			<div class="signup_link">
+				¿Aun no tienes una cuenta? <a href="#">Registrate</a>
+			</div>
+		</form>
+	</div>
+</body>
+<script src="src/script_login.js"></script>
+</html>
