@@ -1,6 +1,6 @@
 var monthName = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"];
 var dayNames = ["Dom", "Lun", "Mar", "Mie", "Jue", "Vie", "Sab"];
-var colors = ["3C5BA8", "F0AD4E", "5BC0DE"]; //A0A6A0
+var colors = ["3C5BA8", "F0AD4E", "5BC0DE"];
 var stateColors = ["#2EEB0F", "#F0AD4E"];
 
 var users;
