@@ -15,7 +15,6 @@
 		<div class="info-box-user">
 			<div class="exit"></div>
 			<div class="name-user">Alexia</div>
-			<div class="info-user">Nombre: Alexia</br>Edad: 0</br>Correo: alexia_example@hotmail.com</br>Numero Telefonico: (686) 000-0000</br></br>Notas: Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el contenido del texto de un sitio mientras que mira su diseño. El punto de usar Lorem Ipsum es que tiene una distribución más o menos normal de las letras, al contrario de usar textos como por ejemplo "Contenido aquí, contenido aquí". Estos textos hacen parecerlo un español que se puede leer.</div>
 			<div class="works">
 				<ul class="list"></ul>
 			</div>
@@ -30,10 +29,25 @@
 				<button onclick="del()" type="button" class="btns btn_delete">Delete</button>
 			</div>
 
+			<div class="controlBtn-2">
+				<button onclick="add_user()" type="button" class="btns btn_add_user">Add User</button>
+				<!--nombre-->
+				<button onclick="add_task()" type="button" class="btns btn_add_task">Add Task</button>
+				<!--elejir usuario, posicion tarea, tiempo-->
+			</div>
+			<div class="controlBtn-3">
+				<button onclick="del_user()" type="button" class="btns btn_del_user">Del User</button>
+				<!--nombre-->
+				<button onclick="del_task()" type="button" class="btns btn_del_task">Del Task</button>
+				<!--elejir usuario, tarea-->
+			</div>
+			<!--Editar: elejir usuario, posicion tarea, tiempo-->
+
 			<div class="add_cont">
 				<div class="add-cont-1">
 					<div id="add-name">Usuario:</div>
 					<input id="add-name-inp" type="text">
+					<button onclick="add_save()" class="btns add_save_1" style="display: none;">Save</button>
 				</div>
 				<div class="add-cont-2">
 					<div id="add-Task">Agrega una Tarea:</div>
@@ -59,9 +73,8 @@
 					<div id="add-last-day">Dia Final: </div>
 					<input readonly type="text" id="add-first-day-inp" placeholder="">
 					<input readonly type="text" id="add-last-day-inp" placeholder="">
-					<button onclick="add_task()" class="btns add_task">Add Tsk</button>
 				</div>
-				<button onclick="add_save()" class="btns add_save">Save</button>
+				<button onclick="add_save()" class="btns add_save_2" style="display: none;">Save</button>
 			</div>
 
 			<div class="edit_cont"></div>
@@ -121,7 +134,6 @@
 		<div class="Col-12 users">
 			<div class="user-data user-0" id="user-0">
 				<div class="Left cont-user-info">
-					<div class="photo">Photo</div>
 					<div class="name">Alexia</div>
 					<div class="cont-job-info">
 						<div class="status-job">
