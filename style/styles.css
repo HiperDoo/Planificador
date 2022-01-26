@@ -86,7 +86,6 @@ body {
 
 .btns {
 	position: absolute;
-	width: 8%;
 	height: 80%;
 
 	box-sizing: border-box;
@@ -126,7 +125,7 @@ body {
 }
 
 .btn_manage {
-	width: 12%;
+	width: 16%;
 	left: 10%;
 	top: 50%;
 	transform: translate(-50%, -50%);
@@ -207,7 +206,7 @@ body {
 	position: absolute;
 	color: white;
 	width: 20%;
-	left: 23%;
+	left: 7%;
 	top: 50%;
 	transform: translate(0%, -50%);
 }
@@ -223,7 +222,7 @@ body {
 	position: absolute;
 	width: 90%;
 	height: 30%;
-	left: 5%;
+	left: -15%;
 	top: 13.333%;
 }
 
@@ -425,31 +424,62 @@ body {
 
 .controlBtn {
 	position: absolute;
-	width: 32%;
-	height: 30%;
-}
-
-.btn_add, .btn_edit, .btn_delete {
-	position: absolute;
-	width: 100%;
-	height: 30%;
+	width: 90%;
+	height: 15%;
 	top: 3%;
 	left: 5%;
 }
-
+.btn_add, .btn_edit, .btn_delete {
+	position: absolute;
+	width: 27.333%;
+	height: 100%;
+	top: 3%;
+	left: 3%;
+}
 .btn_edit {
-	top: 36.33%;
+	left: 36.33%;
+}
+.btn_delete {
+	left: 69.66%;
 }
 
-.btn_delete {
-	top: 69.66%;
+.controlBtn-2, .controlBtn-3 {
+	position: absolute;
+	width: 100%;
+	height: 10%;
+	top: 23%;
+
+	display: none;
+}
+.btn_add_user {
+	width: 35%;
+	left: 10%;
+}
+.btn_add_task {
+	width: 35%;
+	left: 55%;
+}
+.btn_del_user {
+	width: 35%;
+	left: 10%;
+}
+.btn_del_task {
+	width: 35%;
+	left: 55%;
+}
+
+.controlBtn-3 {
+	display: none;
+	width: 100%;
+	height: 10%;
 }
 
 .add_cont {
 	position: absolute;
-	display: none;
-	left: 36%;
-	width: 62.5%;
+	
+	top: 35%;
+	left: 0%;
+	width: 100%;
 	height: 30%;
 }
 
@@ -460,6 +490,8 @@ body {
 .add-cont-1 {
 	width: 100%;
 	height: 30%;
+
+	display: none;
 }
 
 #add-name {
@@ -471,34 +503,32 @@ body {
 #add-name-inp {
 	width: 50%;
 	top: 32%;
-	left: 45%;
+	left: 35%;
 }
 
 .add-cont-2 {
 	width: 100%;
-	height: 70%;
+	height: 60%;
 	top: 30%;
+
+	display: none;
 }
 
 #add-Task {
-	width: 100%;
-	text-align: center;
-}
-
-#add-Task {
-	width: 100%;
-	text-align: center;
+	width: 35%;
+	top: 7%;
+	left: 6%;
 }
 
 #add-Task-inp {
 	width: 50%;
-	top: 15%;
-	left: 25%;
+	top: 7%;
+	left: 40%;
 }
 
 #add-List {
 	width: 35%;
-	top: 75%;
+	top: 65%;
 	left: 12%;
 	transform: translateY(-50%);
 	text-align: center;
@@ -507,35 +537,37 @@ body {
 #add-List-list {
 	width: 47%;
 	height: 46%;
-	left: 50%;
-	top: 52%;
+	left: 45%;
+	top: 42%;
 	border: 1px solid #616E8E;
 	border-radius: 10px;
 }
 
 .add-cont-3 {
-	width: 154%;
+	width: 100%;
 	height: 40%;
-	top: 110%;
-	left: -54%;
+	top: 90%;
+
+	display: none;
 }
 
 #add-first-day {
-	left: 10%;
+	left: 15%;
 }
 
 #add-last-day {
-	left: 70%;
+	left: 65%;
 }
 
 #add-first-day-inp {
+	left: 5%;
 	top: 50%;
 	transform: translateY(-50%);
 }
 
 #add-last-day-inp {
 	top: 50%;
-	left: 100%;
+	left: 95%;
 	transform: translate(-100%, -50%);
 }
 
@@ -602,11 +634,16 @@ body {
 
 /***********************************/
 
-.add_save {
+.add_save_1, .add_save_2 {
 	position: relative;
-	width: 50%;
+	width: 30%;
+	height: 60%;
+	top: 80%;
+	left: 35%;
+}
+.add_save_2 {
+	top: 125%;
 	height: 20%;
-	top: 305%;
 }
 
 .cont-box {

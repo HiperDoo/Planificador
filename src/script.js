@@ -1,6 +1,6 @@
 var monthName = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"];
 var dayNames = ["Dom", "Lun", "Mar", "Mie", "Jue", "Vie", "Sab"];
-var colors = ["3C5BA8", "F0AD4E", "5BC0DE"];
+var colors = ["3C5BA8", "F0AD4E", "5BC0DE"]; //A0A6A0
 var stateColors = ["#2EEB0F", "#F0AD4E"];
 
 var users;
@@ -10,43 +10,38 @@ if (localStorage.getItem("all-users") !== null) {
 	var info = new Array(
 		new Array(
 			"Alexia",
-			0,
-			"alexia_example@hotmail.com",
-			"none",
 			new Array(
-				new Array(
-					"3121_DL2424",
-					"2021-11-06T00:00:00",
-					"2021-11-09T23:59:59"
-				)/*,
+				/*,
 				new Array (
 					"Importante",
 					"2021-09-14T00:00:00",
 					"2021-09-14T23:59:59",
 					true
-				)*/,
+				)*/
 				new Array(
 					"3168 LUM-33",
-					"2021-11-10T00:00:00",
-					"2021-11-14T23:59:59"
+					"2022-01-20T00:00:00",
+					"2022-01-24T23:59:59"
 				),
 				new Array(
 					"3197 LUM-38",
-					"2021-11-15T00:00:00",
-					"2021-11-17T23:59:59"
+					"2022-01-25T00:00:00",
+					"2022-01-26T23:59:59"
+				),
+				new Array(
+					"3121_DL2424",
+					"2022-01-27T00:00:00",
+					"2022-01-30T23:59:59"
 				)
 			)
 		),
 		new Array(
 			"Andres",
-			0,
-			"andres_example@hotmail.com",
-			"none",
 			new Array(
 				new Array(
 					"3163_CP",
-					"2021-11-08T00:00:00",
-					"2021-11-10T23:59:59"
+					"2022-01-18T00:00:00",
+					"2022-01-20T23:59:59"
 				)/*,
 				new Array(
 					"3132 LUM-14-03",
@@ -56,49 +51,43 @@ if (localStorage.getItem("all-users") !== null) {
 				)*/,
 				new Array(
 					"3132 LUM-14-03",
-					"2021-11-13T00:00:00",
-					"2021-11-18T11:59:59"
+					"2022-01-23T00:00:00",
+					"2022-01-28T11:59:59"
 				)
 			)
 		),
 		new Array(
 			"Jefte",
-			0,
-			"jefte_example@hotmail.com",
-			"none",
 			new Array(
 				new Array(
 					"3161 WL-1",
-					"2021-11-24T00:00:00",
-					"2021-11-27T23:59:59"
+					"2022-02-04T00:00:00",
+					"2022-02-07T23:59:59"
 				),
 				new Array(
 					"3168 LUM-31",
-					"2021-11-07T00:00:00",
-					"2021-11-14T23:59:59"
+					"2022-01-17T00:00:00",
+					"2022-01-24T23:59:59"
 				)
 			)
 		),
 		new Array(
 			"Abraham",
-			0,
-			"abraham_example@hotmail.com",
-			"none",
 			new Array(
 				new Array(
 					"3140 Custom Fixture Addition",
-					"2021-11-12T00:00:00",
-					"2021-11-12T23:59:59"
+					"2022-01-22T00:00:00",
+					"2022-01-22T23:59:59"
 				),
 				new Array(
 					"3456",
-					"2021-11-13T00:00:00",
-					"2021-11-13T23:59:59"
+					"2022-01-23T00:00:00",
+					"2022-01-23T23:59:59"
 				),
 				new Array(
 					"3140 Custom Fixture Addition",
-					"2021-11-14T00:00:00",
-					"2021-11-14T23:59:59"
+					"2022-01-24T00:00:00",
+					"2022-01-24T23:59:59"
 				)/*,
 				new Array(
 					"Importante",
@@ -108,8 +97,8 @@ if (localStorage.getItem("all-users") !== null) {
 				)*/,
 				new Array(
 					"3140 Custom Fixture Addition",
-					"2021-11-15T00:00:00",
-					"2021-11-15T23:59:59"
+					"2022-01-25T00:00:00",
+					"2022-01-25T23:59:59"
 				)/*,
 				new Array(
 					"Importante",
@@ -177,9 +166,9 @@ function loadUsersData() {
 		reset.innerHTML = "";
 
 		var numBarGroups = 0;
-		for (var j = 0; j < users[i][4].length; j++) {
-			var startDayJob = users[i][4][j][1];
-			var endDayJob = users[i][4][j][2];
+		for (var j = 0; j < users[i][1].length; j++) {
+			var startDayJob = users[i][1][j][1];
+			var endDayJob = users[i][1][j][2];
 			var startDayJob_format = new Date(startDayJob);
 			var endDayJob_format = new Date(endDayJob);
 
@@ -197,7 +186,7 @@ function loadUsersData() {
 				var backJobBar = document.getElementById("user-" + i).getElementsByClassName("back-bar-task")[numBarGroups - 1];
 				jobBar.style.width = 0 + '%'; backJobBar.style.width = 0 + '%';
 				jobBar.style.marginLeft = 0 + '%'; backJobBar.style.marginLeft = 0 + '%';
-				jobBar.style.background = "#" + colors[i % 3]; backJobBar.style.background = "#" + colors[i % 3] + "24";
+				jobBar.style.background = "#" + colors[i % 3]; backJobBar.style.background = "#" + colors[i % 3] + "80";
 				jobBar.style.top = 0 + '%'; backJobBar.style.top = 0 + '%';
 				backJobBar.removeAttribute('id');
 
@@ -210,7 +199,7 @@ function loadUsersData() {
 					conditionWeek = 2;
 				}
 
-				if (users[i][4][j][3] == true) { //Tareas Importantes
+				if (users[i][1][j][3] == true) { //Tareas Importantes
 					jobBar.style.background = "#FA2828";
 					backJobBar.style.background = "#FA282824";
 
@@ -283,7 +272,7 @@ function loadUsersData() {
 				
 				var jobBar = document.getElementById("user-" + i).getElementsByClassName("group-bars-" + k  + "-gray")[0].getElementsByClassName("bar-task")[0];
 				var backJobBar = document.getElementById("user-" + i).getElementsByClassName("group-bars-" + k + "-gray")[0].getElementsByClassName("back-bar-task")[0];
-				jobBar.style.background = "#A0A6A0"; backJobBar.style.background = "#A0A6A024";
+				jobBar.style.background = "#A0A6A0"; backJobBar.style.background = "#A0A6A080";
 				if (grayBar[k][1] > 2) {
 					jobBar.style.top = 16.6666 + (33.3333 * (grayBar[k][1] - 1)) + '%';
 					backJobBar.style.top = 16.6666 + (33.3333 * (grayBar[k][1] - 1)) + '%';
@@ -381,16 +370,16 @@ function popBox() {
 			popBox.style.display = "";
 			for (var j = 0; j < loadedBars2.length; j++) {
 				if (this == loadedBars2[j]) {
-					popBox.innerHTML = users[loadedBars[j][0]][4][loadedBars[j][1]][0] + "<br/>" +
-						parseInt(users[loadedBars[j][0]][4][loadedBars[j][1]][1].slice(8, 10)) + " " +
-						monthName[parseInt(users[loadedBars[j][0]][4][loadedBars[j][1]][1].slice(5, 7)) - 1] + " - " +
-						parseInt(users[loadedBars[j][0]][4][loadedBars[j][1]][2].slice(8, 10)) + " " +
-						monthName[parseInt(users[loadedBars[j][0]][4][loadedBars[j][1]][2].slice(5, 7)) - 1] +
+					popBox.innerHTML = users[loadedBars[j][0]][1][loadedBars[j][1]][0] + "<br/>" +
+						parseInt(users[loadedBars[j][0]][1][loadedBars[j][1]][1].slice(8, 10)) + " " +
+						monthName[parseInt(users[loadedBars[j][0]][1][loadedBars[j][1]][1].slice(5, 7)) - 1] + " - " +
+						parseInt(users[loadedBars[j][0]][1][loadedBars[j][1]][2].slice(8, 10)) + " " +
+						monthName[parseInt(users[loadedBars[j][0]][1][loadedBars[j][1]][2].slice(5, 7)) - 1] +
 						"<br/>" + loadedBars[j][2] + "%";
-					if (users[loadedBars[j][0]][4][loadedBars[j][1]][3]) {
-						popBox.style.background = "#FA282824";
+					if (users[loadedBars[j][0]][1][loadedBars[j][1]][3]) {
+						popBox.style.background = "#FA282880";
 					} else {
-						popBox.style.background = "#" + colors[loadedBars[j][0] % 3] + "24";
+						popBox.style.background = "#" + colors[loadedBars[j][0] % 3] + "80";
 					}
 				}
 			}
@@ -416,17 +405,17 @@ function right() {
 var today = new Date();
 var token = 0, tempPos = 0;
 for (var i = 0; i < users.length; i++) {
-	for (var j = 0; j < users[i][4].length; j++) {
-		if (today > new Date(users[i][4][j][1]) && today < new Date(users[i][4][j][2])) {
-			document.getElementById("user-" + i).getElementsByClassName("working-on")[0].innerHTML = "Trabajando en: " + users[i][4][j][0];
-			document.getElementById("user-" + i).getElementsByClassName("date-job")[0].innerHTML = parseInt(users[i][4][j][1].slice(8, 10)) + " " + monthName[parseInt(users[i][4][j][1].slice(5, 7)) - 1] + " - " +
-				parseInt(users[i][4][j][2].slice(8, 10)) + " " + monthName[parseInt(users[i][4][j][1].slice(5, 7)) - 1];
+	for (var j = 0; j < users[i][1].length; j++) {
+		if (today > new Date(users[i][1][j][1]) && today < new Date(users[i][1][j][2])) {
+			document.getElementById("user-" + i).getElementsByClassName("working-on")[0].innerHTML = "Trabajando en: " + users[i][1][j][0];
+			document.getElementById("user-" + i).getElementsByClassName("date-job")[0].innerHTML = parseInt(users[i][1][j][1].slice(8, 10)) + " " + monthName[parseInt(users[i][1][j][1].slice(5, 7)) - 1] + " - " +
+				parseInt(users[i][1][j][2].slice(8, 10)) + " " + monthName[parseInt(users[i][1][j][1].slice(5, 7)) - 1];
 			break;
-		} else if (today > new Date(users[i][4][j][2])) {
-			if ((users[i][4].length - 1) > j) {
-				document.getElementById("user-" + i).getElementsByClassName("working-on")[0].innerHTML = "Siguiente Trabajo: " + users[i][4][j + 1][0];
-				document.getElementById("user-" + i).getElementsByClassName("date-job")[0].innerHTML = parseInt(users[i][4][j + 1][1].slice(8, 10)) + " " + monthName[parseInt(users[i][4][j + 1][1].slice(5, 7)) - 1] + " - " +
-				parseInt(users[i][4][j + 1][2].slice(8, 10)) + " " + monthName[parseInt(users[i][4][j + 1][1].slice(5, 7)) - 1];
+		} else if (today > new Date(users[i][1][j][2])) {
+			if ((users[i][1].length - 1) > j) {
+				document.getElementById("user-" + i).getElementsByClassName("working-on")[0].innerHTML = "Siguiente Trabajo: " + users[i][1][j + 1][0];
+				document.getElementById("user-" + i).getElementsByClassName("date-job")[0].innerHTML = parseInt(users[i][1][j + 1][1].slice(8, 10)) + " " + monthName[parseInt(users[i][1][j + 1][1].slice(5, 7)) - 1] + " - " +
+				parseInt(users[i][1][j + 1][2].slice(8, 10)) + " " + monthName[parseInt(users[i][1][j + 1][1].slice(5, 7)) - 1];
 			} else {
 				document.getElementById("user-" + i).getElementsByClassName("working-on")[0].innerHTML = "Descansando...";
 				document.getElementById("user-" + i).getElementsByClassName("date-job")[0].innerHTML = "-- --- - -- ---";
@@ -437,24 +426,24 @@ for (var i = 0; i < users.length; i++) {
 
 var edit_box = document.getElementsByClassName("cont-edit")[0];
 const box = document.getElementsByClassName('cont-box')[0];
+var exit_box = document.getElementsByClassName("exit")[0];
 const divs = document.querySelectorAll('.ver-mas');
 divs.forEach((item, index) => {
 	item.addEventListener('click', function() {
 		box.style.display = "block";
 		document.getElementsByClassName("name-user")[0].innerHTML = users[index][0];
-		document.getElementsByClassName("info-user")[0].innerHTML = "Nombre: " + users[index][0] + "</br>Edad: " + users[index][1] + "</br>Correo: " + users[index][2] + "</br>Numero Telefonico: (686) 123-5678</br></br>Notas: " + users[index][3];
 		var ul = document.getElementsByClassName("list")[0];
 		ul.innerHTML = ''; //Borra lista
-		for (var i = 0; i < users[index][4].length; i++) {
+		for (var i = 0; i < users[index][1].length; i++) {
 			var li = document.createElement("li");
-			li.appendChild(document.createTextNode(users[index][4][i][0]));
+			li.appendChild(document.createTextNode(users[index][1][i][0]));
 			ul.appendChild(li);
 		}
 	})
 });
 
 window.onclick = function(event) {
-  if (event.target == box) {
+  if (event.target == exit_box) {
     box.style.display = "none";
   }
   if (event.target == edit_box) {
@@ -478,50 +467,99 @@ var add_cont = document.getElementsByClassName("add_cont")[0];
 var edit_cont = document.getElementsByClassName("edit_cont")[0];
 var del_cont = document.getElementsByClassName("del_cont")[0];
 
-function add() {
-	add_cont.style.display = "block";
+var add_user_task = document.getElementsByClassName("controlBtn-2")[0];
+var del_user_task = document.getElementsByClassName("controlBtn-3")[0];
+
+function add_user() {
+	document.getElementsByClassName("add-cont-1")[0].style.display = "block";
+	document.getElementsByClassName("add-cont-2")[0].style.display = "none";
+	document.getElementsByClassName("add-cont-3")[0].style.display = "none";
+
+	document.getElementsByClassName("add_save_1")[0].style.display = "block";
+	document.getElementsByClassName("add_save_2")[0].style.display = "none";
+
 	state = 1;
-
-	document.getElementsByClassName("add-cont-2")[0].style.display = "block";
-	document.getElementsByClassName("add-cont-3")[0].style.display = "block";
-
-	document.getElementsByClassName("add_task")[0].style.display = "block";
-
-	var ul = document.getElementsByClassName("add-list-ul")[0];
-	ul.innerHTML = '';
-	for (var i = 0; i < tempListTasks.length; i++) {
-		var li = document.createElement("li");
-		li.appendChild(document.createTextNode(tempListTasks[i][0]));
-		li.classList.add("elmL");
-		ul.appendChild(li);
-	}
-	listElem = document.querySelectorAll(".elmL");
-
-	listElem.forEach((item, index) => {
-		item.addEventListener('click', function() {
-			if (state != 0) {
-				selection = index + 1;
-				console.log("Pos: " + selection);
-			}
-		});
-	});
 }
 
-function edit() {
-	add_cont.style.display = "block";
-	state = 2;
-
+var check = -1;
+function add_task() {
+	document.getElementsByClassName("add-cont-1")[0].style.display = "block";
 	document.getElementsByClassName("add-cont-2")[0].style.display = "block";
 	document.getElementsByClassName("add-cont-3")[0].style.display = "block";
 
-	document.getElementsByClassName("add_task")[0].style.display = "none";
+	document.getElementsByClassName("add_save_1")[0].style.display = "none";
+	document.getElementsByClassName("add_save_2")[0].style.display = "block";
+
+	state = 2;
 
 	var nameAdd = document.getElementById("add-name-inp");
 	var firstDAdd = document.getElementById("add-first-day-inp");
 	var lastDAdd = document.getElementById("add-last-day-inp");
 
+	for (var i = 0; i < users.length; i++) {
+		if (users[i][0] == nameAdd.value) {
+			check = i;
+			break;
+		}
+	}
+
+	if (check != -1) {
+		var ul = document.getElementsByClassName("add-list-ul")[0];
+		ul.innerHTML = '';
+		for (var i = 0; i < users[check][1].length; i++) {
+			var li = document.createElement("li");
+			li.appendChild(document.createTextNode(users[check][1][i][0]));
+			li.classList.add("elmL");
+			ul.appendChild(li);
+		}
+		listElem = document.querySelectorAll(".elmL");
+
+		listElem.forEach((item, index) => {
+			item.addEventListener('click', function() {
+				if (state != 0) {
+					selection = index + 1;
+					console.log("Pos: " + selection);
+					firstDAdd.value = users[check][1][index][1];
+					lastDAdd.value = users[check][1][index][2];
+				}
+			});
+		});
+	}
+}
+
+function add() {
+	add_user_task.style.display = "block";
+	del_user_task.style.display = "none";
+
+	document.getElementsByClassName("add-cont-1")[0].style.display = "none";
+	document.getElementsByClassName("add-cont-2")[0].style.display = "none";
+	document.getElementsByClassName("add-cont-3")[0].style.display = "none";
+
+	document.getElementById("add-Task").style.display = "block";
+	document.getElementById("add-Task-inp").style.display = "block";
+}
+
+function edit() {
+	add_user_task.style.display = "none";
+	del_user_task.style.display = "none";
+	state = 3;
+
+	document.getElementsByClassName("add-cont-1")[0].style.display = "block";
+	document.getElementsByClassName("add-cont-2")[0].style.display = "block";
+	document.getElementsByClassName("add-cont-3")[0].style.display = "block";
+
+	document.getElementsByClassName("add_save_1")[0].style.display = "none";
+	document.getElementsByClassName("add_save_2")[0].style.display = "block";
+
+	var nameAdd = document.getElementById("add-name-inp");
+	var firstDAdd = document.getElementById("add-first-day-inp");
+	var lastDAdd = document.getElementById("add-last-day-inp");
+
+	document.getElementById("add-Task").style.display = "block";
+	document.getElementById("add-Task-inp").style.display = "block";
+
 	if (nameAdd.value) {
-		var check = -1;
+		check = -1;
 		for (var i = 0; i < users.length; i++) {
 			if (users[i][0] == nameAdd.value) {
 				check = i;
@@ -531,9 +569,9 @@ function edit() {
 		if (check != -1) {
 			var ul = document.getElementsByClassName("add-list-ul")[0];
 			ul.innerHTML = '';
-			for (var i = 0; i < users[check][4].length; i++) {
+			for (var i = 0; i < users[check][1].length; i++) {
 				var li = document.createElement("li");
-				li.appendChild(document.createTextNode(users[check][4][i][0]));
+				li.appendChild(document.createTextNode(users[check][1][i][0]));
 				li.classList.add("elmL");
 				ul.appendChild(li);
 			}
@@ -544,8 +582,8 @@ function edit() {
 					if (state != 0) {
 						selection = index + 1;
 						console.log("Pos: " + selection);
-						firstDAdd.value = users[check][4][index][1];
-						lastDAdd.value = users[check][4][index][2];
+						firstDAdd.value = users[check][1][index][1];
+						lastDAdd.value = users[check][1][index][2];
 					}
 				});
 			});
@@ -553,68 +591,103 @@ function edit() {
 	}
 }
 
-function del() {
-	add_cont.style.display = "block";
-	state = 3;
-
+function del_user() {
+	document.getElementsByClassName("add-cont-1")[0].style.display = "block";
 	document.getElementsByClassName("add-cont-2")[0].style.display = "none";
 	document.getElementsByClassName("add-cont-3")[0].style.display = "none";
+
+	document.getElementsByClassName("add_save_1")[0].style.display = "block";
+	document.getElementsByClassName("add_save_2")[0].style.display = "none";
+
+	document.getElementById("add-Task").style.display = "block";
+	document.getElementById("add-Task-inp").style.display = "block";
+
+	state = 4;
 }
 
-var tempListTasks = [];
-function add_task() {
-	var nameAdd = document.getElementById("add-Task-inp");
-	var firstDAdd = document.getElementById("add-first-day-inp");
-	var lastDAdd = document.getElementById("add-last-day-inp");
-	var tempElement = [];
-	if (nameAdd.value && firstDAdd.value && lastDAdd.value) {
-		tempElement.push(nameAdd.value);
-		tempElement.push((selection != -1) ? selection : 0);
-		tempElement.push(firstDAdd.value);
-		tempElement.push(lastDAdd.value);
+function del_task() {
+	document.getElementsByClassName("add-cont-1")[0].style.display = "block";
+	document.getElementsByClassName("add-cont-2")[0].style.display = "block";
+	document.getElementsByClassName("add-cont-3")[0].style.display = "none";
 
-		tempListTasks.push(tempElement);
-		console.log("Tarea agregada");
-		nameAdd.value = firstDAdd.value = lastDAdd.value = "";
-		selection = -1;
+	document.getElementsByClassName("add_save_1")[0].style.display = "none";
+	document.getElementsByClassName("add_save_2")[0].style.display = "block";
 
-	} else {
-		console.log("Ingrese los datos");
+	document.getElementById("add-Task").style.display = "none";
+	document.getElementById("add-Task-inp").style.display = "none";
+
+	state = 5;
+
+	var nameAdd = document.getElementById("add-name-inp");
+	for (var i = 0; i < users.length; i++) {
+		if (users[i][0] == nameAdd.value) {
+			check = i;
+			break;
+		}
+	}
+
+	if (check != -1) {
+		var ul = document.getElementsByClassName("add-list-ul")[0];
+		ul.innerHTML = '';
+		for (var i = 0; i < users[check][1].length; i++) {
+			var li = document.createElement("li");
+			li.appendChild(document.createTextNode(users[check][1][i][0]));
+			li.classList.add("elmL");
+			ul.appendChild(li);
+		}
+		listElem = document.querySelectorAll(".elmL");
+
+		listElem.forEach((item, index) => {
+			item.addEventListener('click', function() {
+				if (state != 0) {
+					selection = index + 1;
+					console.log("Pos: " + selection);
+				}
+			});
+		});
 	}
 }
 
-function setName(user, text) {
-	users[pos][0] = text;
+function del() {
+	add_user_task.style.display = "none";
+	del_user_task.style.display = "block";
+
+	document.getElementsByClassName("add-cont-1")[0].style.display = "none";
+	document.getElementsByClassName("add-cont-2")[0].style.display = "none";
+	document.getElementsByClassName("add-cont-3")[0].style.display = "none";
 }
 
 function add_save() {
 	if (state == 1) {
 		users.push(new Array(
 			document.getElementById("add-name-inp").value || "None",
-			0,
-			"correo",
-			"none",
 			new Array()
 		));
-		for (var i = 0; i < tempListTasks.length; i++) {
-			users[users.length - 1][4].splice(
-				tempListTasks[i][1], 0,
-				new Array(
-					tempListTasks[i][0],
-					tempListTasks[i][2],
-					tempListTasks[i][3]
-				)
-			);
-		}
-
-		console.log("Se agrego un nuevo usuario");
 		localStorage.setItem("all-users", JSON.stringify(users));
+		window.location.reload(1);
+		console.log("Se agrego un nuevo usuario");
 	} else if (state == 2) {
+		var nameAdd = document.getElementById("add-Task-inp");
+		var firstDAdd = document.getElementById("add-first-day-inp");
+		var lastDAdd = document.getElementById("add-last-day-inp");
+		var tempElement = [];
+		if (nameAdd.value && firstDAdd.value && lastDAdd.value) {
+			users[check][1].splice(selection, 0, new Array(nameAdd.value, firstDAdd.value, lastDAdd.value));
+
+			selection = -1;
+			check = -1;
+			localStorage.setItem("all-users", JSON.stringify(users));
+			window.location.reload(1);
+			console.log("Se a agregado una nueva tarea!");
+		} else {
+			console.log("Ingrese los datos");
+		}
+	} else if (state == 3) {
 		var nameAdd = document.getElementById("add-name-inp");
 		var firstDAdd = document.getElementById("add-first-day-inp");
 		var lastDAdd = document.getElementById("add-last-day-inp");
 		if (nameAdd.value && selection != -1) {
-			var check = -1;
+			check = -1;
 			for (var i = 0; i < users.length; i++) {
 				if (users[i][0] == nameAdd.value) {
 					check = i;
@@ -624,7 +697,7 @@ function add_save() {
 			if (check != -1) {
 				if (document.getElementById("add-Task-inp").value) {
 					console.log("Texto");
-					users[check][4].splice(
+					users[check][1].splice(
 						selection,
 						0,
 						new Array(
@@ -633,54 +706,62 @@ function add_save() {
 							lastDAdd.value
 						)
 					);
-					//users[check][4][selection][0] = document.getElementById("add-Task-inp").value;
 				} else {
-					users[check][4][selection - 1][1] = firstDAdd.value;
-					users[check][4][selection - 1][2] = lastDAdd.value;
+					users[check][1][selection - 1][1] = firstDAdd.value;
+					users[check][1][selection - 1][2] = lastDAdd.value;
 				}
 
-				console.log("Se ha editado un usuario");
 				localStorage.setItem("all-users", JSON.stringify(users));
+				window.location.reload(1);
+				console.log("Se ha editado un usuario");
 			} else {
 				console.log("No se ha ingresado un usuario valido");
 			}
 		} else {
 			console.log("Ingrese los datos");
 		}
-	} else if (state == 3) {
-		var nameAdd = document.getElementById("add-name-inp");
-
-		if (nameAdd.value) {
-			var check = -1;
+	} else if (state == 4) {
+		var delUser = document.getElementById("add-name-inp");
+		
+		if (delUser.value) {
+			check = -1;
 			for (var i = 0; i < users.length; i++) {
-				if (users[i][0] == nameAdd.value) {
+				if (users[i][0] == delUser.value) {
 					check = i;
 					break;
 				}
 			}
 			if (check != -1) {
-				users.splice(check, 1);
-
-				console.log("Se ha eliminado un usuario");
+				if (confirm("Estas seguro que quieres borrar este usuario?")) {
+					users.splice(check, 1);
+					localStorage.setItem("all-users", JSON.stringify(users));
+					window.location.reload(1);
+				}
+			}
+		}
+	} else if (state == 5) {
+		if (check != -1 && selection != -1) {
+			if (confirm("Estas seguro que quieres borrar esta tarea?")) {
+				users[check][1].splice(selection - 1, 1);
 				localStorage.setItem("all-users", JSON.stringify(users));
-			} else {
-				console.log("No se ha ingresado un usuario valido");
+				window.location.reload(1);
 			}
 		}
 	}
 
 	state = 0;
-	selection != -1
+	check = -1;
+	selection = -1;
 }
 
 function addTask(user, pos, taskName, startDay, endDay, important = false) {
 	try {
-		users[user][4].splice(pos, 0, new Array(taskName, startDay, endDay, important));
+		users[user][1].splice(pos, 0, new Array(taskName, startDay, endDay, important));
 
 		var nA = new Date(startDay);
 		var nB = new Date(endDay);
-		var wA = new Date(users[user][4][pos - 1][1]);
-		var wB = new Date(users[user][4][pos - 1][2]);
+		var wA = new Date(users[user][1][pos - 1][1]);
+		var wB = new Date(users[user][1][pos - 1][2]);
 
 		var a;
 		if (important) {
@@ -712,34 +793,34 @@ function addTask(user, pos, taskName, startDay, endDay, important = false) {
 				} else {
 					fixDay = "0" + a.getDate().toString();
 				}
-				users[user][4][pos - 1][2] = a.getFullYear() + "-" + ((a.getMonth().toString().length == 2 || a.getMonth() > 8) ? (a.getMonth() + 1) : ("0" + (a.getMonth() + 1))) + "-" + (((a.getDate().toString().length) == 2) ? a.getDate() : "0" + a.getDate().toString()) + "T" + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds();
+				users[user][1][pos - 1][2] = a.getFullYear() + "-" + ((a.getMonth().toString().length == 2 || a.getMonth() > 8) ? (a.getMonth() + 1) : ("0" + (a.getMonth() + 1))) + "-" + (((a.getDate().toString().length) == 2) ? a.getDate() : "0" + a.getDate().toString()) + "T" + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds();
 			} else {
 				//console.log("El trabajo NO interfiere");
 			}
 
 			var temp = pos + 1;
-			if (temp < users[user][4].length && new Date(users[user][4][temp][1]) < new Date(users[user][4][temp - 2][2])) {
-				var aa = new Date(users[user][4][temp][1]);
+			if (temp < users[user][1].length && new Date(users[user][1][temp][1]) < new Date(users[user][1][temp - 2][2])) {
+				var aa = new Date(users[user][1][temp][1]);
 				var bb = new Date(users[user][4][temp][2]);
 				var a = new Date(aa.getTime() + (nB.getTime() - nA.getTime()));
 				var b = new Date(bb.getTime() + (nB.getTime() - nA.getTime()));
-				users[user][4][temp][1] = a.getFullYear() + "-" + ((a.getMonth().toString().length == 2 || a.getMonth() > 8) ? (a.getMonth() + 1) : ("0" + (a.getMonth() + 1))) + "-" + (((a.getDate().toString().length) == 2) ? a.getDate() : "0" + a.getDate().toString()) + "T" + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds();
-				users[user][4][temp][2] = b.getFullYear() + "-" + ((b.getMonth().toString().length == 2 || b.getMonth() > 8) ? (b.getMonth() + 1) : ("0" + (b.getMonth() + 1))) + "-" + (((b.getDate().toString().length) == 2) ? b.getDate() : "0" + b.getDate().toString()) + "T" + b.getHours() + ":" + b.getMinutes() + ":" + b.getSeconds();
+				users[user][1][temp][1] = a.getFullYear() + "-" + ((a.getMonth().toString().length == 2 || a.getMonth() > 8) ? (a.getMonth() + 1) : ("0" + (a.getMonth() + 1))) + "-" + (((a.getDate().toString().length) == 2) ? a.getDate() : "0" + a.getDate().toString()) + "T" + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds();
+				users[user][1][temp][2] = b.getFullYear() + "-" + ((b.getMonth().toString().length == 2 || b.getMonth() > 8) ? (b.getMonth() + 1) : ("0" + (b.getMonth() + 1))) + "-" + (((b.getDate().toString().length) == 2) ? b.getDate() : "0" + b.getDate().toString()) + "T" + b.getHours() + ":" + b.getMinutes() + ":" + b.getSeconds();
 				temp++;
 
 				while (temp < users[user][4].length) {
-					console.log(new Date(users[user][4][temp][1]));
-					console.log(new Date(users[user][4][temp - 1][2]));
-					if (new Date(users[user][4][temp][1]) > new Date(users[user][4][temp - 1][2])) {
+					console.log(new Date(users[user][1][temp][1]));
+					console.log(new Date(users[user][1][temp - 1][2]));
+					if (new Date(users[user][1][temp][1]) > new Date(users[user][1][temp - 1][2])) {
 						break;
 					}
 
-					var aa = new Date(users[user][4][temp][1]);
-					var bb = new Date(users[user][4][temp][2]);
+					var aa = new Date(users[user][1][temp][1]);
+					var bb = new Date(users[user][1][temp][2]);
 					var a = new Date(aa.getTime() + (nB.getTime() - nA.getTime()));
 					var b = new Date(bb.getTime() + (nB.getTime() - nA.getTime()));
-					users[user][4][temp][1] = a.getFullYear() + "-" + ((a.getMonth().toString().length == 2 || a.getMonth() > 8) ? (a.getMonth() + 1) : ("0" + (a.getMonth() + 1))) + "-" + (((a.getDate().toString().length) == 2) ? a.getDate() : "0" + a.getDate().toString()) + "T" + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds();
-					users[user][4][temp][2] = b.getFullYear() + "-" + ((b.getMonth().toString().length == 2 || b.getMonth() > 8) ? (b.getMonth() + 1) : ("0" + (b.getMonth() + 1))) + "-" + (((b.getDate().toString().length) == 2) ? b.getDate() : "0" + b.getDate().toString()) + "T" + b.getHours() + ":" + b.getMinutes() + ":" + b.getSeconds();
+					users[user][1][temp][1] = a.getFullYear() + "-" + ((a.getMonth().toString().length == 2 || a.getMonth() > 8) ? (a.getMonth() + 1) : ("0" + (a.getMonth() + 1))) + "-" + (((a.getDate().toString().length) == 2) ? a.getDate() : "0" + a.getDate().toString()) + "T" + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds();
+					users[user][1][temp][2] = b.getFullYear() + "-" + ((b.getMonth().toString().length == 2 || b.getMonth() > 8) ? (b.getMonth() + 1) : ("0" + (b.getMonth() + 1))) + "-" + (((b.getDate().toString().length) == 2) ? b.getDate() : "0" + b.getDate().toString()) + "T" + b.getHours() + ":" + b.getMinutes() + ":" + b.getSeconds();
 					temp++;
 				}
 			}
@@ -759,7 +840,7 @@ function manage() {
 
 function delTask(user, pos) {
 	try {
-		users[user][4].splice(pos, 1);
+		users[user][1].splice(pos, 1);
 		console.log("Se ha eliminado un trabajo del usuario " + users[user][0] + "!");
 	} catch(e) {
 		console.log("No se ha ingresado un usuario valido.");
